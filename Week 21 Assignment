@@ -1,0 +1,46 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <math.h>
+
+struct patient {
+	int id;
+	float temp;
+	int pRate;
+	int rRate;
+	int bps;
+	int bpd;
+};
+
+void main(char *argv[])
+{
+	FILE *fptr;
+	fptr = fopen("C:\\Users\\Owner\\Documents\\Visual Studio 2015\\Projects\\Week 21 Assignment\\patient.txt", "a");
+
+	char *date;
+	char *time;
+	date = __DATE__;
+	time = __TIME__;
+
+	struct patient patients;
+
+	patients.id = atof(argv[1]);
+	patients.temp = atof(argv[2]);
+	patients.pRate = atof(argv[3]);
+	patients.rRate = atof(argv[4]);
+	patients.bps = atof(argv[5]);
+	patients.bpd = atof(argv[6]);
+
+	fprintf(fptr, "%s/t%s/t%d/t%f/t%f/t%f/t%f/t%f/t",
+		date,
+		time,
+		patients.id,
+		patients.temp,
+		patients.pRate,
+		patients.rRate,
+		patients.bps,
+		patients.bpd
+	);
+
+	fclose(fptr);
+}
