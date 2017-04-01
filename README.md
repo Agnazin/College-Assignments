@@ -1,2 +1,2 @@
 # College-Assignments
-A few of my better assignments
+A few of my better pieces from college assignments.
